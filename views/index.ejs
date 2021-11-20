@@ -1,0 +1,67 @@
+<%- include('./partials/header.ejs') %>
+
+    <h1>main file </h1>
+
+    <a href="/add" class="btn btn-primary">Click here To Add Information</a>
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Address</th>
+                <th scope="col">Notes</th>
+                <th scope="col">Item Purchased</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <% data.forEach((information, index)=>{ %>
+
+                <tr>
+                    <th scope="row">
+                        <%= information.id%>
+                    </th>
+                    <td>
+                        <%= information.first_name%>
+                    </td>
+                    <td>
+                        <%= information.last_name%>
+                    </td>
+
+                    <td>
+                        <%= information.email%>
+                    </td>
+                    <td>
+                        <%= information.phone%>
+                    </td>
+                    <td>
+                        <%= information.address%>
+                    </td>
+                    <td>
+                        <%= information.notes%>
+                    </td>
+                    <td>
+                        <%= information.itemPurchased%>
+                    </td>
+                    <td>
+                        <%= information.quantity%>
+                    </td>
+                    <td>
+                        <%= information.price%>
+                    </td>
+                    <td> <a href="/edit/<%= information.id %>">Edit </a></td>
+                    <% });%>
+
+        </tbody>
+    </table>
+    </div>
+    </body>
+
+    </html>
